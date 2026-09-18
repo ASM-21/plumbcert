@@ -1,0 +1,33 @@
+{
+  "note": "Five-bus study system with the topology of the PJM 5-bus training case. Reactances are rounded so that 1/x is a whole number, which keeps the certificates small enough to read by eye; the largest change is under 1 percent of the original value.",
+  "network": {
+    "buses": ["A", "B", "C", "D", "E"],
+    "slack": "A",
+    "lines": [
+      { "name": "A-B", "src": "A", "dst": "B", "susc": 36, "rating": 400 },
+      { "name": "A-D", "src": "A", "dst": "D", "susc": 33, "rating": 400 },
+      { "name": "A-E", "src": "A", "dst": "E", "susc": 156, "rating": 400 },
+      { "name": "B-C", "src": "B", "dst": "C", "susc": 93, "rating": 400 },
+      { "name": "C-D", "src": "C", "dst": "D", "susc": 34, "rating": 400 },
+      { "name": "D-E", "src": "D", "dst": "E", "susc": 34, "rating": 240 }
+    ]
+  },
+  "request": {
+    "name": "300 MW interconnection request at bus E",
+    "description": "A new 300 MW resource at bus E. The rest of the dispatch is not a single point: loads carry forecast error and the existing units are free within their operating ranges, so the study is over a box of dispatches rather than one snapshot.",
+    "injections": {
+      "A": [-2000, 2000],
+      "B": [-330, -270],
+      "C": [-300, -200],
+      "D": [-400, 120],
+      "E": [0, 300]
+    }
+  },
+  "screens": [
+    { "monitored": "A-E" },
+    { "monitored": "A-E", "outaged": "D-E" },
+    { "monitored": "A-D" },
+    { "monitored": "A-D", "outaged": "A-B" },
+    { "monitored": "D-E" }
+  ]
+}

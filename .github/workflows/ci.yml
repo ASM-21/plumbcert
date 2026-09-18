@@ -1,0 +1,59 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+  schedule:
+    # Nothing here depends on an external library, so a scheduled run is purely
+    # a canary on the toolchain and the runner image.
+    - cron: '0 6 * * 1'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [tolstack, dimcert, lyapcert, carbonsched, gridcert]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache elan and Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan
+          key: elan-${{ runner.os }}-${{ hashFiles('**/lean-toolchain') }}
+
+      - name: Install Lean
+        run: |
+          if [ ! -x "$HOME/.elan/bin/lake" ]; then
+            curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
+            sh elan-init.sh -y --default-toolchain "$(cat ${{ matrix.project }}/lean-toolchain)"
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Report versions
+        run: lean --version && lake --version && python3 --version
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify ${{ matrix.project }}
+        working-directory: ${{ matrix.project }}
+        run: ./scripts/verify.sh
+
+      - name: Mutation-test certificate constants
+        run: python3 scripts/mutate.py --project ${{ matrix.project }} --sample 6
+
+  prose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prose guards
+        run: python3 scripts/check-prose.py
+      - name: Guards must fire when their failure is injected
+        run: python3 scripts/check-prose.py --inject

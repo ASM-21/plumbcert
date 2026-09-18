@@ -1,0 +1,17 @@
+{
+  "symbols": {
+    "V": "volt", "I": "ampere", "Z": "ohm", "R": "ohm", "X": "ohm",
+    "S_base": "voltAmpere", "V_base": "volt", "Z_base": "ohm",
+    "P": "watt", "Q": "var", "C": "farad", "omega": "hertz",
+    "L_line": "henry", "Z_c": "ohm"
+  },
+  "formulas": [
+    { "name": "base impedance", "lhs": "Z_base", "rhs": ["div", ["pow", "V_base", 2], "S_base"] },
+    { "name": "per-unit impedance is dimensionless", "lhs": ["div", "Z", "Z_base"], "rhs": "1" },
+    { "name": "short-circuit current", "lhs": "I", "rhs": ["div", "V", "Z"] },
+    { "name": "line charging reactive power", "lhs": "Q", "rhs": ["mul", ["mul", ["pow", "V", 2], "omega"], "C"] },
+    { "name": "surge impedance", "lhs": "Z_c", "rhs": ["sqrt", ["div", "L_line", "C"]] },
+    { "name": "voltage drop", "lhs": "V", "rhs": ["mul", "I", ["add", "R", "X"]] },
+    { "name": "WRONG: base impedance inverted", "lhs": "Z_base", "rhs": ["div", "S_base", ["pow", "V_base", 2]] }
+  ]
+}

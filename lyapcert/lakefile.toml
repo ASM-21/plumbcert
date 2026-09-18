@@ -1,0 +1,7 @@
+name = "LyapCert"
+version = "0.1.0"
+defaultTargets = ["LyapCert", "LyapCert.Examples", "LyapCert.Audit"]
+
+[[lean_lib]]
+name = "LyapCert"
+globs = ["LyapCert", "LyapCert.Examples", "LyapCert.Audit"]

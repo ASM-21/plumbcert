@@ -1,0 +1,7 @@
+name = "TolStack"
+version = "0.1.0"
+defaultTargets = ["TolStack", "TolStack.Audit"]
+
+[[lean_lib]]
+name = "TolStack"
+globs = ["TolStack", "TolStack.Audit"]

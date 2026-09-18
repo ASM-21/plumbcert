@@ -1,0 +1,7 @@
+name = "GridCert"
+version = "0.1.0"
+defaultTargets = ["GridCert", "GridCert.Examples", "GridCert.Audit"]
+
+[[lean_lib]]
+name = "GridCert"
+globs = ["GridCert", "GridCert.Examples", "GridCert.Audit"]

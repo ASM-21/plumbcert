@@ -1,0 +1,50 @@
+plumbcert
+Copyright 2026 Andrew Morrissey
+
+This product includes software developed by Andrew Morrissey
+(https://github.com/ASM-21/plumbcert).
+
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+--------------------------------------------------------------------------
+THIRD-PARTY CONTENT
+--------------------------------------------------------------------------
+
+This repository bundles no third-party source code and has no software
+dependencies beyond the Lean 4 toolchain and the Python standard library.
+Lean 4 (https://github.com/leanprover/lean4) is itself Apache-2.0 licensed
+and is fetched at build time rather than vendored here.
+
+DATA
+
+All example data in this repository is synthetic or constructed by the
+author. Specifically:
+
+  gridcert/examples/study.json
+      A five-bus test network whose topology follows the widely published
+      PJM 5-bus educational example, a teaching case that appears in
+      textbooks and course materials without restriction. Branch
+      reactances have been rounded so that each susceptance is an integer;
+      the largest resulting change is under one percent. Ratings, the
+      injection box and the interconnection request are invented by the
+      author for illustration. No utility, ISO/RTO, or client data is
+      present.
+
+  carbonsched/examples/scenarios.json
+      Marginal carbon intensity profiles shaped by hand to resemble a
+      summer weekday load shape. These are illustrative and are NOT
+      measured data from any grid operator or emissions provider. See
+      docs/LIMITATIONS.md.
+
+  tolstack/examples/axial_gap.json
+      An invented bearing-and-spacer stack-up. Not taken from any drawing.
+
+  lyapcert/examples/systems.json
+      Invented discrete-time systems chosen to exercise the certificate
+      paths, including a marginally stable and a deadbeat case.
+
+  dimcert/examples/interconnection.json
+      Textbook power-system relations. The SI base and derived dimensions
+      encoded in dimcert/DimCert/Units.lean follow the International
+      System of Units as published by the BIPM, which is factual reference
+      data and not subject to copyright.

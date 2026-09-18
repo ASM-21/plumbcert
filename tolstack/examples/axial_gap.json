@@ -1,0 +1,12 @@
+{
+  "name": "axial gap",
+  "units": "um",
+  "description": "Bearing and spacer retained by a snap ring in a counterbored housing. Closing dimension is the axial gap left for the retaining ring.",
+  "window": { "lo": 250, "hi": 600 },
+  "terms": [
+    { "sign": "+", "label": "housing counterbore depth", "nominal": 37000, "lowDev": 0, "upDev": 50 },
+    { "sign": "-", "label": "bearing width", "nominal": 15000, "lowDev": -30, "upDev": 30 },
+    { "sign": "-", "label": "spacer length", "nominal": 20000, "lowDev": -50, "upDev": 50 },
+    { "sign": "-", "label": "retaining ring thickness", "nominal": 1600, "lowDev": -60, "upDev": 0 }
+  ]
+}

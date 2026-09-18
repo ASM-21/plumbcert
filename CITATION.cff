@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: "plumbcert: proof-carrying certificates for engineering studies in Lean 4"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - given-names: Andrew
+    family-names: Morrissey
+    orcid: "https://orcid.org/0009-0004-8758-2687"
+repository-code: "https://github.com/ASM-21/plumbcert"
+url: "https://github.com/ASM-21/plumbcert"
+abstract: >-
+  Five machine-checked engineering tools in Lean 4 sharing a
+  certificate-checking design: an untrusted search procedure emits a small
+  certificate, and the Lean kernel re-derives the engineering claim from that
+  certificate by computation. Covers worst-case tolerance stack-up,
+  dimensional consistency, discrete-time Lyapunov stability, carbon-aware
+  load scheduling, and DC power flow N-1 thermal screening. Every checker is
+  proved both sound and constructively complete, so a rejection returns the
+  specific counterexample. All five build with no dependencies, not even
+  mathlib, because carrying physical quantities as scaled integers keeps
+  every kernel check within linear integer arithmetic. The methodology is an
+  application of certifying algorithms and proof-carrying code to engineering
+  study artifacts rather than a new verification technique; see
+  docs/RELATED-WORK.md for the prior-art assessment.
+keywords:
+  - formal verification
+  - Lean 4
+  - certifying algorithms
+  - certificate checking
+  - proof-carrying code
+  - tolerance analysis
+  - dimensional analysis
+  - Lyapunov stability
+  - carbon-aware computing
+  - power systems
+  - contingency analysis
+license: Apache-2.0
+version: 0.1.0
+date-released: "2026-08-06"

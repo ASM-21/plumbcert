@@ -1,0 +1,24 @@
+{
+  "systems": [
+    {
+      "name": "agc",
+      "title": "Single-area load-frequency control loop, sampled at 0.1 s",
+      "state": "frequency deviation and governor setpoint deviation",
+      "A": [["4/5", "-1/5"], ["1/10", "9/10"]]
+    },
+    {
+      "name": "lossless tank",
+      "title": "Lossless LC exchange, quarter-period step",
+      "state": "inductor current and capacitor voltage in matched units",
+      "A": [[0, -1], [1, 0]],
+      "settle": { "v": [30, 40], "k": 8 }
+    },
+    {
+      "name": "deadbeat pipeline",
+      "title": "Two-tap deadbeat pipeline",
+      "state": "current and previous sample",
+      "A": [[0, 1], [0, 0]],
+      "settle": { "v": [12, 5], "k": 3 }
+    }
+  ]
+}

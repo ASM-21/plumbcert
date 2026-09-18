@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tolstack"
+version = "0.1.0"
+description = "Worst-case 1D tolerance stack-up with machine-checked optimality"
+readme = "../README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+tolstack = "tolstack.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["tolstack*"]

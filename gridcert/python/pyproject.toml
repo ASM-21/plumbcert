@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gridcert"
+version = "0.1.0"
+description = "Certified DC power flow N-1 thermal screening"
+readme = "../README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+gridcert = "gridcert.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["gridcert*"]

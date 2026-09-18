@@ -1,0 +1,10 @@
+Stack-up report (all values in mm)
+  + housing counterbore depth: 37.000 [37.000, 37.050]
+  - bearing width: 15.000 [14.970, 15.030]
+  - spacer length: 20.000 [19.950, 20.050]
+  - retaining ring thickness: 1.600 [1.540, 1.600]
+  nominal        : 0.400
+  worst-case     : [0.320, 0.590]  (spread 0.270)
+  design window  : [0.250, 0.600]
+  worst-case test: PASS
+  RSS test       : pass   (statistical estimate only, not a bound)

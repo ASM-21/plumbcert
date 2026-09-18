@@ -1,0 +1,7 @@
+name = "CarbonSched"
+version = "0.1.0"
+defaultTargets = ["CarbonSched", "CarbonSched.Examples", "CarbonSched.Audit"]
+
+[[lean_lib]]
+name = "CarbonSched"
+globs = ["CarbonSched", "CarbonSched.Examples", "CarbonSched.Audit"]

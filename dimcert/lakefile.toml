@@ -1,0 +1,7 @@
+name = "DimCert"
+version = "0.1.0"
+defaultTargets = ["DimCert", "DimCert.Audit"]
+
+[[lean_lib]]
+name = "DimCert"
+globs = ["DimCert", "DimCert.Audit"]

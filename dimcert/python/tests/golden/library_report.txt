@@ -1,0 +1,72 @@
+ok    Ohm's law: V = I R
+        lhs: kg m^2 s^-3 A^-1
+        rhs: kg m^2 s^-3 A^-1
+ok    real power: P = V I
+        lhs: kg m^2 s^-3
+        rhs: kg m^2 s^-3
+ok    P = I² R
+        lhs: kg m^2 s^-3
+        rhs: kg m^2 s^-3
+ok    P = V² / R
+        lhs: kg m^2 s^-3
+        rhs: kg m^2 s^-3
+ok    E = P t
+        lhs: kg m^2 s^-2
+        rhs: kg m^2 s^-2
+ok    I = V / Z
+        lhs: A
+        rhs: A
+ok    ΔV = I (R + X)
+        lhs: kg m^2 s^-3 A^-1
+        rhs: kg m^2 s^-3 A^-1
+ok    R = ρ ℓ / A
+        lhs: kg m^2 s^-3 A^-2
+        rhs: kg m^2 s^-3 A^-2
+ok    Z_c = √(L/C)
+        lhs: kg m^2 s^-3 A^-2
+        rhs: kg m^2 s^-3 A^-2
+ok    Q = V² ω C
+        lhs: kg m^2 s^-3
+        rhs: kg m^2 s^-3
+ok    δ = √(2ρ / ω μ)
+        lhs: m
+        rhs: m
+ok    V₁/V₂ = N₁/N₂
+        lhs: 1 (dimensionless)
+        rhs: 1 (dimensionless)
+ok    Z_base = V_base² / S_base
+        lhs: kg m^2 s^-3 A^-2
+        rhs: kg m^2 s^-3 A^-2
+ok    I_base = S_base / V_base
+        lhs: A
+        rhs: A
+ok    Q = m c_p ΔT
+        lhs: kg m^2 s^-2
+        rhs: kg m^2 s^-2
+ok    q = k A ΔT / ℓ
+        lhs: kg m^2 s^-3
+        rhs: kg m^2 s^-3
+ok    η = W / Q
+        lhs: 1 (dimensionless)
+        rhs: 1 (dimensionless)
+ok    Re = ρ v D / μ
+        lhs: 1 (dimensionless)
+        rhs: 1 (dimensionless)
+ok    S = √(P² + Q²)
+        lhs: kg m^2 s^-3
+        rhs: kg m^2 s^-3
+ok    WRONG PHYSICS, RIGHT DIMENSIONS: S = P + Q
+        lhs: kg m^2 s^-3
+        rhs: kg m^2 s^-3
+FAIL  WRONG: P = V I²
+        lhs: kg m^2 s^-3
+        rhs: kg m^2 s^-3 A
+FAIL  WRONG: Z_base = V_base / S_base²
+        lhs: kg m^2 s^-3 A^-2
+        rhs: kg^-1 m^-2 s^3 A^-1
+FAIL  WRONG: P + V
+        lhs: INCONSISTENT
+        rhs: kg m^2 s^-3
+FAIL  WRONG: q = k A ΔT ℓ
+        lhs: kg m^2 s^-3
+        rhs: kg m^4 s^-3
